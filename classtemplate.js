@@ -441,7 +441,7 @@ var SolidityEvent = require("web3/lib/web3/event.js");
 
       Object.keys(Contract.links).forEach(function(library_name) {
         var library_address = Contract.links[library_name];
-        var regex = new RegExp("__" + library_name + "_*", "g");
+        var regex = new RegExp("__" + library_name + "_+", "g");
 
         binary = binary.replace(regex, library_address.replace("0x", ""));
       });
